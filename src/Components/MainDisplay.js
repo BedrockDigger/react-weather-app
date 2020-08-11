@@ -96,7 +96,7 @@ class MainDisplay extends React.Component {
                         warning
                         icon='exclamation'
                         header='Something went wrong'
-                        content={s.returnObj.toString()}
+                        content={s.returnObj.message.toString()}
                     />
                 </div>
             )

@@ -21,9 +21,9 @@ async function getLocalObj(cityName, countryCode) {
             }
         }
     ).catch(
-        res => {
+        err => {
             return {
-                data: res.data.obj,
+                data: err,
                 succeeded: false
             }
         }
