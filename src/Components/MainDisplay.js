@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, Card, Icon, Button, Statistic, Message } from 'semantic-ui-react'
-import getWeatherObj from '../Utils/FetchData'
+import getLocalObj from '../Utils/FetchData'
 
 class MainDisplay extends React.Component {
 
@@ -44,12 +44,13 @@ class MainDisplay extends React.Component {
     }
 
     async loadWeather() {
-        getWeatherObj(
+        getLocalObj(
             this.state.cityName, this.state.countryCode
         ).then(
             (finalObj) => {
                 console.log(finalObj)
                 this.setState({ returnObj: finalObj.data, isReady: true })
+                console.log(this.state.returnObj)
                 if (finalObj.succeeded === true) {
                     this.setState({ getSucceeded: true })
                 }
